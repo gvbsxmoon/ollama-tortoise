@@ -8,6 +8,9 @@ app = FastAPI()
 
 @app.post("/story/")
 async def story(request: StoryRequest):
+    # At the moment this will return just the story text from ollama plugin
+    # go to /app/plugin/tortoise to see the TTS implementation
+    
     try:
         story = await generate_story(request)
     except Exception as e:
@@ -17,7 +20,9 @@ async def story(request: StoryRequest):
 
     # Save audio to a temporary file
     # audio_filename = f"{uuid.uuid4()}.wav"
+    # audio = generate_audio(story, request.voice)
     # save(audio_filename, audio.squeeze(0).cpu(), 24000)
 
     # Return the audio file as a response
-    # return FileResponse(audio_filename, media_type="audio/wav", filename="story.wav")
+    # Cappellata below: this is not gonna work
+    # return FileResponse(audio_filename, media_type="audio/wav", filename=audio_filename)
