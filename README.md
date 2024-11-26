@@ -47,3 +47,19 @@ To run and pull models, use the following commands:
   ```bash
   uvicorn index:app --reload
   ```
+
+You then should find the api running on the port 8000 and you can POST
+
+```8000/story```
+
+with a body like that
+
+```bash
+{
+  "character": "lion",
+  "environment": "forest"
+}
+```
+
+tvb simo
+
