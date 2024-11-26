@@ -2,7 +2,7 @@
 from tortoise.api import TextToSpeech
 from tortoise.utils.audio import load_voice
 
-# if you want to test standalone tortoise
+# If you want to test standalone tortoise
 # you can do something like this
 
 # audio = generate_audio("hello friends, i'm simona", "emma")
@@ -14,8 +14,8 @@ def generate_audio(text, voice):
     voice_samples, conditioning_latents = load_voice(voice)
 
     return tts.tts_with_preset(
-        text,
-        voice_samples=voice_samples,
-        conditioning_latents=conditioning_latents,
-        preset="fast"
+            text,
+            voice_samples=voice_samples,
+            conditioning_latents=conditioning_latents,
+            preset="fast"
         )
